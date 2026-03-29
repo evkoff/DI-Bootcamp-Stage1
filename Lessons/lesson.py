@@ -68,20 +68,37 @@ name = "Student"
 
 
 
-#Exercise 4: Disney Characters
-users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
-disney_users_A= {}
-for index, name in enumerate(users):
-    disney_users_A[name] = index
-print(disney_users_A)
+# #Exercise 4: Disney Characters
+# users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
+# #Create a dictionary that maps characters to their indices:
+# disney_users_A= {}
+# for index, name in enumerate(users):
+#     disney_users_A[name] = index
+# print(disney_users_A)
 
-disney_users_B = {}
-for index, name in enumerate(users):
-    disney_users_B[index] = name
-print(disney_users_B)
+# #Create a dictionary that maps indices to characters:
+# disney_users_B = {}
+# for index, name in enumerate(users):
+#     disney_users_B[index] = name
+# print(disney_users_B)
 
-sorted_users = sorted(users)
-disney_users_C = {name: index for index, name in enumerate(sorted_users)}
-print(disney_users_C)
+# #Create a dictionary where characters are sorted alphabetically and mapped to their indices:
+# sorted_users = sorted(users)
+# disney_users_C = {name: index for index, name in enumerate(sorted_users)}
+# print(disney_users_C)
 
-
+items_purchase = {"Water": "$1", "Bread": "$3", "TV": "$1,000", "Fertilizer": "$20"}
+wallet = "$300"
+wallet_value = int(wallet.replace("$", "").replace(",", ""))
+basket = []
+for item, price in items_purchase.items():
+    price_value = int(price.replace("$", "").replace(",", ""))
+    if price_value <= wallet_value:
+        basket.append(item)
+        wallet_value -= price_value
+    else:
+        print(f"You cannot afford {item} which costs {price}.")
+if not basket:
+    print("Nothing")
+else:
+    print(sorted(basket))
