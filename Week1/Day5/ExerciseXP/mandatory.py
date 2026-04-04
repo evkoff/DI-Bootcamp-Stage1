@@ -10,12 +10,14 @@ key_value_list = zip(keys, values)
 my_dict = dict(key_value_list)
 print(my_dict)
 
+
+
+
 # Exercise 2: Cinemax #2
 # Key Python Topics:
 # Looping through dictionaries
 # Conditionals
 # Calculations
-
 # Instructions
 # Write a program that calculates the total cost of movie tickets for a family based on their ages.
 
@@ -28,7 +30,6 @@ family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
 # Loop through the family dictionary to calculate the total cost.
 # Print the ticket price for each family member.
 # Print the total cost at the end.
-family = {}
 total_cost = 0
 print("--- Ticket Prices ---")
 for name, age in family.items():
@@ -42,10 +43,11 @@ for name, age in family.items():
     total_cost += price
 print(f"Total cost: ${total_cost}")
 
-# 
+
 # Bonus:
 # Allow the user to input family members’ names and ages, then calculate the total ticket cost.
 # 
+total_cost = 0
 print("\n--- Enter Family Members ---")
 while True:
     name = input("Enter family member's name (or 'done' to finish): ")
@@ -65,4 +67,113 @@ for name, age in family.items():
     total_cost += price
 print(f"Total cost: ${total_cost}")
 
-                    
+
+
+# Exercise 3: Zara
+# Key Python Topics:
+# Creating dictionaries
+# Accessing and modifying dictionary elements
+# Dictionary methods like .pop() and .update()
+# Instructions
+# Create and manipulate a dictionary that contains information about the Zara brand.
+# Brand Information:
+# name: Zara
+# creation_date: 1975
+# creator_name: Amancio Ortega Gaona
+# type_of_clothes: men, women, children, home
+# international_competitors: Gap, H&M, Benetton
+# number_stores: 7000
+# major_color: 
+#     France: blue, 
+#     Spain: red, 
+#     US: pink, green
+# Create a dictionary called brand with the provided data.
+brand = {
+    'name': 'Zara',
+    'creation_date': 1975,
+    'creator_name': 'Amancio Ortega Gaona',
+    'type_of_clothes': ['men', 'women', 'children', 'home'],
+    'international_competitors': ['Gap', 'H&M', 'Benetton'],
+    'number_stores': 7000,
+    'major_color': {
+    'France': 'blue',
+    'Spain': 'red',
+    'US': 'pink, green'
+    }}
+#Change the value of number_stores to 2.
+brand['number_stores'] = 2
+#Print a sentence describing Zara’s clients using the type_of_clothes key.
+clients_types = ", ".join(brand['type_of_clothes'])
+print(f"Zara’s clients use {clients_types} clothes.")
+#Add a new key country_creation with the value Spain.
+brand['country_creation'] = 'Spain'
+print(brand['country_creation'])
+
+#Check if international_competitors exists and, if so, add “Desigual” to the list.
+if "international_competitors" in brand:
+     brand['international_competitors'].append('Desigual')
+print(brand["international_competitors"])
+
+#Delete the creation_date key.
+del brand['creation_date']
+
+#Print the last item in international_competitors.
+last_competitor = brand['international_competitors'][-1]
+print(f"The last international competitor is {last_competitor}.")
+
+#Print the major colors in the US.
+us_colors = brand['major_color']['US']
+print(f"The major colors in the US are {us_colors}.")
+
+#Print the number of keys in the dictionary.
+keys_counts = len(brand)
+print(f"The number of key-value pairs in the brand dictionary is: {keys_counts}")
+
+#Print all keys of the dictionary.
+all_keys = list(brand.keys())
+print(f"The keys in the brand dictionary are: {all_keys}")
+
+#Create another dictionary called more_on_zara with creation_date and number_stores. Merge this dictionary with the original brand dictionary and print the result.
+more_on_zara = {
+    'creation_date': 1975,
+    'number_stores': 7000}
+brand.update(more_on_zara)
+print(f"Updated Brand Dictionary: {brand}")
+
+
+
+
+
+#Exercise 4: Disney Characters
+# Key Python Topics:
+# Looping with indexes
+# Dictionary creation
+# Sorting
+
+# Instructions
+# You are given a list of Disney characters. Create three dictionaries based on different patterns as shown below:
+
+
+# Character List:
+# users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
+
+# Expected Results:
+
+# 1. Create a dictionary that maps characters to their indices:
+users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
+#Create a dictionary that maps characters to their indices:
+disney_users_A= {}
+for index, name in enumerate(users):
+    disney_users_A[name] = index
+print(disney_users_A)
+
+#Create a dictionary that maps indices to characters:
+disney_users_B = {}
+for index, name in enumerate(users):
+    disney_users_B[index] = name
+print(disney_users_B)
+
+#Create a dictionary where characters are sorted alphabetically and mapped to their indices:
+sorted_users = sorted(users)
+disney_users_C = {name: index for index, name in enumerate(sorted_users)}
+print(disney_users_C)
