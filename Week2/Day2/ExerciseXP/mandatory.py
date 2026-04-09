@@ -221,4 +221,4 @@ def main():
         print("A bit warm, stay hydrated.")
     else: # 32 to 40
         print("It’s really hot! Stay cool.")
-main()
+main() 
