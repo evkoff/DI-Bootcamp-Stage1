@@ -17,9 +17,9 @@
 class Computer():
 
     def description(self, name):
-        """
-        This is a totally useless function
-        """
+        # """
+        # This is a totally useless function
+        # """
         print("I am a computer, my name is", name)
         #Analyse the line below
         print(self)
