@@ -238,13 +238,251 @@
 
 # print(list(hello_people))
 
-people = ["Rick", "Morty", "Beth", "Jerry", "Snowball"]
-# filtered_people = filter(lambda name: len(name) <= 4, people)
-hello_messages = map(lambda name: f"Hello, {name}", filter(lambda name: len(name) <= 4, people))
-print(list(hello_messages))
+# people = ["Rick", "Morty", "Beth", "Jerry", "Snowball"]
+# # filtered_people = filter(lambda name: len(name) <= 4, people)
+# hello_messages = map(lambda name: f"Hello, {name}", filter(lambda name: len(name) <= 4, people))
+# print(list(hello_messages))
+
+# from collections import Counter  
+# list = [1,2,3,4,1,2,6,7,3,8,1,2,2]  
+# answer=Counter()
+# answer = Counter(list)  
+# print(answer[2])  
+
+# from collections import deque  
+# #initialization
+# list = ["a","b","c"]  
+# deq = deque(list)  
+# print(deq)  
+
+# #insertion
+# deq.append("z")  
+# deq.appendleft("g")  
+# print(deq)
+# #removal
+# deq.pop()  
+# deq.popleft()  
+# # print(deq)
+
+# from collections import namedtuple
+# Student = namedtuple('Student', 'fname, lname, age')  
+# s1 = Student('Peter', 'James', '13')  
+# # print(s1.fname) 
+
+# import collections
+
+# dictionary1 = { 'a' : 1, 'b' : 2 }  
+# dictionary2 = { 'c' : 3, 'b' : 4 }  
+# chain_Map = collections.ChainMap(dictionary1, dictionary2)  
+# print(chain_Map.maps)  
+
+# from collections import OrderedDict  
+# order = OrderedDict()  
+# order['a'] = 1  
+# order['b'] = 2  
+# order['c'] = 3  
+# print(order)  
+
+# #unordered dictionary
+# unordered=dict()
+# unordered['a'] = 1  
+# unordered['b'] = 2  
+# unordered['c'] = 3 
+# print("Default dictionary", unordered)
 
 
+# import itertools
+
+# result = itertools.count(start = 0, step = 2)
+
+# for number in result:
+# # termination condition
+#     if number < 8:
+#         print (number)
+#     else:
+#         break
+
+# import itertools
+
+# result = itertools.cycle('12345')
+# counter = 0
+
+# for number in result:
+# # termination condition
+#     if counter < 10 :
+#         print (number)
+# #         counter = counter + 1
+# #     else:
+# #         break
+
+# # print hello two times
+# import itertools
+
+# result = itertools.repeat('hello', times = 2)
+
+# for word in result:
+#     print (word)
+
+# # iterate over three lists
+# import itertools
+
+# list_one = ['a', 'b', 'c']
+# list_two =['d', 'e', 'f']
+# list_three = ['1', '2', '3']
+
+# result = itertools.chain(list_one, list_two, list_three)
+
+# for element in result:
+#   print (element)
+
+#find the names of people who have the flu
+# import itertools
+
+# names = ['Alice', 'James', 'Matt']
+# have_flu = [True, True, False]
+
+# result = itertools.compress(names, have_flu)
+
+# for element in result:
+#   print (element)
+
+# import itertools
+
+# my_list = [0, 0, 1, 2, 0]
+
+# result = itertools.dropwhile(lambda x: x == 0, my_list)
+
+# for elements in result:
+#   print (elements)
+
+# class MyClass(object):
+#     count = 0
+
+#     def __init__(self, val):
+#         self.val = val
+#         MyClass.count += 1
+
+#     def set_val(self, newval):
+#         self.val = newval
+
+#     def get_val(self):
+#         return self.val
+
+#     @classmethod
+#     def get_count(cls):
+#         return cls.count
+
+# object_1 = MyClass(10)
+# print("\nValue of object : %s" % object_1.get_val())
+# print(MyClass.get_count())
+
+# object_2 = MyClass(20)
+# print("\nValue of object : %s" % object_2.get_val())
+# print(MyClass.get_count())
+
+# class Person:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __call__(self):
+#         print (f"Person: {self.name}, Age: {self.age}")
+
+# person1 = Person("Sarah", 25)
+# # person1()
+# class Person:
+#   def __init__(self, name, age):
+#       self.name = name
+#       self.age  = age
+
+#   def __repr__(self):
+#       return f"{self.__class__.__name__} : {self.name} {self.age}"
+
+# newPerson = Person('Sarah', 24)
+
+# print(newPerson)
+# # >> Person : Sarah 24 
+# # __repr__ is the representation of an object
+
+class Person:
+  def __init__(self, name, lastName):
+      self.name = name
+      self.lastName = lastName
+
+  def __repr__(self):
+      return f"{self.__class__.__name__} : {self.name} {self.lastName}"
+
+  def __add__(self, other):
+      return Person(self.name, other.lastName)
+
+# father = Person('John', 'Snow')
+# mother = Person('Kaleesi', 'MotherOfDragons')
+# # using the __add__() method
+# dragonChild = father + mother 
+
+# print(dragonChild)
+# # >> Person : John MotherOfDragons // __add__ is called to add two objects
+
+# print(type(dragonChild))
+# # >> <class '__main__.Person'>
+
+# print(dir(dragonChild))
+# # >> ['__add__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'lastName', 'name']
 
 
+# class Person:
+#     def __init__(self, name, lastName):
+#         self.name = name
+#         self.lastName = lastName
 
 
+# #Here we overloaded the method by redefining '__repr__ 'using 'def' and passed the argument '(self)'
+
+#     def __repr__(self):
+
+# # We can write whatever we want inside this method, but we have to return an object.
+
+#       return f"{self.__class__.__name__} : {self.name} {self.lastName}"
+
+#     def __add__(self,other):
+#         name = self.name[0] + other.name[1:]
+#         lastname = other.lastName
+#         return Person(name,lastname)
+
+# father = Person('John', 'Snow')
+# mother = Person('Kaleesi', 'MotherOfDragons')
+# # using the __add__() method
+# dragonChild = father + mother 
+
+# print(dragonChild)
+# # >>Person : Jaleesi MotherOfDragons
+
+
+# from datetime import datetime, timedelta, date
+
+
+# today_date = date.today()
+# actual_datetime = datetime.now()
+
+# in_15_hours = actual_datetime + timedelta(hours=15, minutes=10)
+
+# print(f"Today is the {today_date.strftime('%d/%m')}")
+# print(f"In 15 hours and 10 minutes it will be the {in_15_hours.strftime('%d/%m')}")
+
+# from datetime import datetime, timedelta, date
+
+# today_date = datetime.date.today()
+# actual_datetime = datetime.now()
+# in_15_hours = actual_datetime + timedelta(hours=15, minutes=10)
+
+# print(f"Today is the {today_date.strftime('%d/%m')}")
+# print(f"In 15 hours and 10 minutes it will be the {in_15_hours.strftime('%d/%m')}")
+
+from datetime import datetime, timedelta, date
+
+today_date = date.today()
+actual_datetime = datetime.now()
+in_15_hours = actual_datetime + timedelta(hours=15, minutes=10)
+
+print(f"Today is the {today_date.strftime('%d/%m')}")
+print(f"In 15 hours and 10 minutes it will be the {in_15_hours.strftime('%d/%m')}")
