@@ -478,11 +478,74 @@ class Person:
 # print(f"Today is the {today_date.strftime('%d/%m')}")
 # print(f"In 15 hours and 10 minutes it will be the {in_15_hours.strftime('%d/%m')}")
 
-from datetime import datetime, timedelta, date
+# from datetime import datetime, timedelta, date
 
-today_date = date.today()
-actual_datetime = datetime.now()
-in_15_hours = actual_datetime + timedelta(hours=15, minutes=10)
+# today_date = date.today()
+# actual_datetime = datetime.now()
+# in_15_hours = actual_datetime + timedelta(hours=15, minutes=10)
 
-print(f"Today is the {today_date.strftime('%d/%m')}")
-print(f"In 15 hours and 10 minutes it will be the {in_15_hours.strftime('%d/%m')}")
+# print(f"Today is the {today_date.strftime('%d/%m')}")
+# print(f"In 15 hours and 10 minutes it will be the {in_15_hours.strftime('%d/%m')}")
+
+# from datetime import datetime
+
+# def birthday_countdown():
+#     now = datetime.now()
+#     birthday = datetime(now.year, 12, 15)
+    
+#     if now >= birthday:
+#         birthday = datetime(now.year + 1, 12, 15)
+    
+#     diff = birthday - now
+    
+#     days = diff.days
+#     hours, remainder = divmod(diff.seconds, 3600)
+#     minutes, seconds = divmod(remainder, 60)
+    
+#     print(f"My birthday is in {days} days, and {hours:02}:{minutes:02}:{seconds:02}")
+
+# birthday_countdown()
+
+# import requests
+
+# # 1. Получаем категории
+# categories_url = "https://api.chucknorris.io/jokes/categories"
+# categories = requests.get(categories_url).json()
+
+# print("Available categories:", categories)
+
+# # 2. Берём первую категорию (или любую)
+# category = categories[0]
+
+# # 3. Получаем шутку
+# joke_url = f"https://api.chucknorris.io/jokes/random?category={category}"
+# joke = requests.get(joke_url).json()
+
+# print("\nCategory:", category)
+# print("Joke:", joke["value"])
+
+
+
+
+import requests
+
+try:
+    # категории
+    categories = requests.get(
+        "https://api.chucknorris.io/jokes/categories"
+    ).json()
+
+    category = categories[0]
+
+    # несколько шуток
+    for _ in range(3):
+        response = requests.get(
+            f"https://api.chucknorris.io/jokes/random?category={category}"
+        )
+        
+        if response.status_code == 200:
+            data = response.json()
+            print(data["value"])
+
+except requests.exceptions.RequestException as e:
+    print("Error:", e)
