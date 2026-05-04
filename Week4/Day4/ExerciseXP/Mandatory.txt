@@ -1,0 +1,279 @@
+🌟Exercise 1: Introduction to Data Analysis (Easy)
+
+
+Objective: Understand the basic overview and significance of data analysis.
+Task:
+Write a short essay or report on the following topics:
+
+What is data analysis?
+Why is data analysis important in modern contexts?
+List and describe three areas where data analysis is applied today.
+Hint/Tip:
+
+Research current trends in data analysis and real-world examples to provide depth to your essay.
+
+
+____________
+What is data analysis?
+Data analysis is the process of working with data in order to extract useful information and support decision-making. It includes collecting, cleaning, transforming, and interpreting data to find patterns or insights.
+In simple terms: raw data by itself is meaningless, but after analysis it becomes knowledge that can be used.
+
+Why is data analysis important?
+In modern society, huge amounts of data are generated every day (from apps, websites, sensors, etc.). Data analysis helps turn this data into actionable insights.
+Research shows that organizations using data-driven decision-making achieve higher productivity and profitability, and can improve outcomes such as customer satisfaction and operational efficiency.
+
+Key reasons why it matters:
+
+It enables better decisions based on facts, not intuition
+It helps identify trends and predict future outcomes
+It improves efficiency and reduces risks
+
+Three areas where data analysis is applied
+
+Healthcare
+Data analysis is used to predict diseases, personalize treatments, and monitor patients in real time. For example, hospitals analyze patient data to improve outcomes and reduce costs.
+Finance and Banking
+Banks use data analysis to detect fraud, assess credit risks, and personalize financial products. This helps reduce losses and improve decision accuracy.
+Retail and Marketing
+Companies analyze customer behavior to recommend products, optimize pricing, and improve marketing strategies. This leads to better customer experience and increased sales.
+
+Conclusion
+Data analysis is a key skill in the modern world. It transforms raw data into valuable insights, helping organizations and individuals make smarter decisions. As data continues to grow, the importance of data analysis will only increase.
+
+
+🌟Exercise 2: Dataset Loading and Initial Analysis
+
+
+Objective: Practice dataset loading from Kaggle and initial analysis.
+Task:
+for the following dataset : How Much Sleep Do Americans Really Get?, Global Trends in Mental Health Disorder and Credit Card Approvals.
+
+Load the dataset into Jupyter or Google Colab.
+Display the first few rows.
+Provide a brief dataset description.
+using df.describe() I see that 'Mental health Depression disorder Data.csv' dataset contains  this data: Anxiety disorders (%)	Drug use disorders (%)	Depression (%)	Alcohol use disorders (%)
+
+Dataset 'Time Americans Spend Sleeping.csv' contains this data: Year	Avg hrs per day sleeping	Standard Error
+
+Dataset 'cc_approvals.data' contains this data: 1.25	01	0.1
+
+
+
+🌟Exercise 3: Identifying Data Types
+
+
+Objective: Learn to identify different data types.
+Task:
+For the datasets from the previous exercise, categorize each column of it as either quantitative or qualitative and explain your reasoning.
+
+Data Types Classification
+
+'Mental health Depression disorder Data.csv' dataset contains both qualitative and quantitative variables.
+
+Qualitative variables:
+
+Entity (country name)
+Code (country code)
+These variables represent categories and are not used for numerical calculations.
+
+Quantitative variables:
+
+Year
+Schizophrenia (%)
+Bipolar disorder (%)
+Eating disorders (%)
+Anxiety disorders (%)
+Drug use disorders (%)
+Depression (%)
+
+These variables are numerical and can be used for statistical analysis.
+
+
+The 'Time Americans Spend Sleeping.csv' dataset contains both qualitative and quantitative variables.
+
+Qualitative variables:
+
+Period
+Type of Days
+Age Group
+Activity
+Sex
+
+These variables represent categories (e.g., groups of people or types of activities) and cannot be used for numerical calculations.
+
+Quantitative variables:
+
+Year
+Avg hrs per day sleeping
+Standard Error
+
+These variables are numerical and can be used for statistical analysis.
+For example, average sleeping hours can be compared across different groups.
+
+
+The dataset 'Credit Card Approvals' contains both qualitative and quantitative variables.
+
+Qualitative variables:
+
+Multiple columns with data type object (e.g., categorical codes such as b, u, g, t, etc.)
+
+These variables represent categories or encoded attributes and are not suitable for numerical operations.
+
+Quantitative variables:
+
+Columns with data types int64 and float64
+
+These variables represent numerical values and can be used for statistical analysis, such as calculating averages or distributions.
+
+
+
+
+🌟Exercise 4: Exploring Data Types
+
+
+Objective: Learn about different types of data in data analysis.
+Task:
+Load the Iris dataset using Kaggle into a Jupyter Notebook or Google Colaboratory Notebook.
+Identify and list which columns in your dataset are qualitative and which are quantitative.
+Write a brief description of why each column is classified as qualitative or quantitative.
+Tools: Jupyter Notebook, Python with Pandas library.
+
+Iris Dataset – Data Types Classification
+
+The dataset contains both quantitative and qualitative variables.
+
+Quantitative variables:
+
+SepalLengthCm
+SepalWidthCm
+PetalLengthCm
+PetalWidthCm
+
+These variables are numerical measurements of the flower's sepal and petal dimensions. They can be used for statistical analysis such as calculating averages and distributions.
+
+Qualitative variable:
+
+Species
+
+This variable represents the category or type of the flower (e.g., setosa, versicolor, virginica). It is not numerical and cannot be used in mathematical calculations.
+
+Basic Observations
+
+The dataset contains several columns that are useful for different types of analysis.
+
+For trend analysis, the columns Year and Avg hrs per day sleeping are important, as they allow us to observe how sleep patterns change over time.
+
+For group comparison, the columns Sex, Age Group, and Avg hrs per day sleeping can be used to compare sleep habits between different groups of people.
+
+For lifestyle analysis, the columns Type of Days and Activity are useful to understand how sleep varies depending on daily routines and activities.
+
+Additionally, the Standard Error column helps evaluate the reliability and variability of the data.
+
+import pandas as pd
+df = pd.read_csv('/Mental health Depression disorder Data.csv')
+df.head()
+df.shape
+df.describe()
+df.info()
+
+
+🌟 Exercise 6: Identifying Data Types
+Below are various data sources. Identify whether each one is an example of structured or unstructured data.
+
+A company’s financial reports stored in an Excel file.
+Photographs uploaded to a social media platform.
+A collection of news articles on a website.
+Inventory data in a relational database.
+Recorded interviews from a market research study.
+
+
+The financial reports stored in Excel and inventory data in a relational database are examples of structured data because they are organized in tables with predefined formats.
+
+Photographs, news articles, and recorded interviews are examples of unstructured data because they do not follow a predefined data model and are not organized in a tabular format.
+
+🌟 Exercise 7: Transformation Exercise
+For each of the following unstructured data sources, propose a method to convert it into structured data. Explain your reasoning.
+
+A series of blog posts about travel experiences.
+Audio recordings of customer service calls.
+Handwritten notes from a brainstorming session.
+A video tutorial on cooking.
+
+1. Blog posts about travel experiences
+
+Method: Use text processing (NLP) to extract structured fields such as location, date, sentiment, and keywords.
+
+Explanation:
+Blog posts are unstructured text, but they can be converted into a table where each row represents a post and columns contain extracted features like destination, travel dates, and overall sentiment.
+
+2. Audio recordings of customer service calls
+
+Method: Convert speech to text using speech recognition, then apply text analysis.
+
+Explanation:
+Audio is unstructured, but after transcription it becomes text. From there, we can extract structured data such as customer issue type, call duration, sentiment, and resolution status.
+
+3. Handwritten notes from a brainstorming session
+
+Method: Use OCR (Optical Character Recognition) to convert handwriting into text, then organize it into categories.
+
+Explanation:
+Handwritten notes are not machine-readable. OCR converts them into text, which can then be grouped into structured formats like lists of ideas, themes, or action items.
+
+4. Video tutorial on cooking
+
+Method: Extract audio → convert to text → identify steps and ingredients using NLP.
+
+Explanation:
+Video contains visual and audio data. By transcribing speech and optionally analyzing frames, we can create structured data such as ingredients, steps, cooking time, and tools.
+
+
+
+🌟 Exercise 8 : Import a file from Kaggle
+Note: This dataset was originally sourced from Kaggle, but for easier access, it has been made available on GitHub.
+
+👉 Please download the dataset directly from the GitHub repository to use it in this project.
+
+Import the train dataset. Use the train.csv file.
+Print the first few rows of the DataFrame.
+import pandas as pd
+
+url = 'https://github.com/devtlv/Datasets-DA-Bootcamp-2-/raw/refs/heads/main/Week%204%20-%20Data%20Understanding/W4D3%20-%20Importing%20Data,%20Exporting%20D/train.zip'
+df = pd.read_csv(url)
+
+df.head()
+
+
+
+
+🌟 Exercise 9 : Export a dataframe to excel format and JSON format.
+Create a simple dataframe.
+Export the dataframe to an excel file.
+Export the dataframe to a JSON file.
+
+
+
+
+
+
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'City': ['NY', 'London', 'Paris']
+}
+
+df = pd.DataFrame(data)
+df.to_excel('data.xlsx', index=False)
+df.to_json('data.json')
+
+
+🌟 Exercise 10: Reading JSON Data
+Use a sample JSON dataset
+
+Import the JSON data from the provided URL.
+Use Pandas to read the JSON data.
+Display the first five entries of the data.
+
+url = '/posts.json'
+df = pd.read_json(url)
+df.head()
