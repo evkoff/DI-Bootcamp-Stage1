@@ -1,0 +1,58 @@
+Case Study: Netflix and Data-Driven Decision Making
+Overview
+
+Netflix uses data analysis to make important business decisions, especially when creating new content. One well-known example is the production of House of Cards.
+
+📊 What data was analyzed?
+
+Netflix analyzed large amounts of user data, including:
+
+viewing history
+preferred genres
+popular actors and directors
+user behavior (e.g., when people stop watching)
+
+For example, the data showed that many users:
+
+enjoy political dramas
+watch content with Kevin Spacey
+like movies directed by David Fincher
+⚙️ Methods used
+
+Netflix applied:
+
+recommendation algorithms
+behavioral data analysis
+predictive analytics
+
+This allowed them to predict the success of a show before producing it.
+
+🎯 Outcome
+House of Cards became a major success
+Netflix increased investment in original content
+The company changed the streaming industry
+💡 Why data analysis was important
+
+Without data analysis:
+
+decisions would rely on intuition
+the risk of failure would be much higher
+
+With data analysis:
+
+decisions were based on real user behavior
+risks were reduced
+success became more predictable
+🧠 Impact
+
+Data analysis helped Netflix:
+
+understand customer preferences
+make better investment decisions
+personalize recommendations
+
+As a result, Netflix became one of the leading companies in the entertainment industry.
+
+✍️ Conclusion
+
+Data analysis played a crucial role in helping Netflix make strategic decisions. By analyzing user behavior, the company was able to predict success, reduce risks, and transform the entertainment industry.

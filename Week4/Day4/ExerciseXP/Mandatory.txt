@@ -276,4 +276,3 @@ Display the first five entries of the data.
 
 url = '/posts.json'
 df = pd.read_json(url)
-df.head()
